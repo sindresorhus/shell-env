@@ -2,9 +2,13 @@ import test from 'ava';
 import m from './';
 
 test('async', async t => {
-	t.true('HOME' in await m());
+	const env = await m();
+	t.true('HOME' in env);
+	t.false('' in env);
 });
 
 test('sync', t => {
-	t.true('HOME' in m.sync());
+	const env = m.sync();
+	t.true('HOME' in env);
+	t.false('' in env);
 });

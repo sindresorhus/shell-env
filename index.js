@@ -33,7 +33,8 @@ module.exports.sync = () => {
 
 	try {
 		// TODO: use `execa` → https://github.com/sindresorhus/execa/issues/7
-		return parseEnv(childProcess.execFileSync(defaultShell, args, {encoding: 'utf8'}));
+		var stdout = childProcess.execFileSync(defaultShell, args, {encoding: 'utf8'});
+		return parseEnv(stdout.trim());
 	} catch (err) {
 		return process.env;
 	}
