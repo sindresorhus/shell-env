@@ -30,7 +30,7 @@ Return a promise for the environment variables.
 
 ### shellEnv.sync()
 
-Returns the the environment variables.
+Returns the environment variables.
 
 
 ## Related
