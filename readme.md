@@ -2,7 +2,7 @@
 
 > Get [environment variables](https://en.wikipedia.org/wiki/Environment_variable) from the [shell](https://en.wikipedia.org/wiki/Shell_(computing))
 
-Especially useful for Electron/NW.js apps as GUI apps on OS X doesn't inherit the environment variables defined in your dotfiles *(.bashrc/.bash_profile/.zshrc/etc)*.
+Especially useful for Electron/NW.js apps as GUI apps on macOS doesn't inherit the environment variables defined in your dotfiles *(.bashrc/.bash_profile/.zshrc/etc)*.
 
 
 ## Install
@@ -36,7 +36,7 @@ Returns the environment variables.
 ## Related
 
 - [shell-path](https://github.com/sindresorhus/shell-path) - Get the $PATH from the shell
-- [fix-path](https://github.com/sindresorhus/fix-path) - Fix the $PATH on OS X when run from a GUI app
+- [fix-path](https://github.com/sindresorhus/fix-path) - Fix the $PATH on macOS when run from a GUI app
 - [shell-history](https://github.com/sindresorhus/shell-history) - Get the command history of the user's shell
 
 
