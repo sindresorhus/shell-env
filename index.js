@@ -3,6 +3,7 @@ const childProcess = require('child_process');
 const execa = require('execa');
 const stripAnsi = require('strip-ansi');
 const defaultShell = require('default-shell');
+
 const args = ['-ilc', 'env; exit'];
 
 function parseEnv(env) {
