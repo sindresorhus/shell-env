@@ -19,18 +19,29 @@ const shellEnv = require('shell-env');
 
 console.log(shellEnv.sync());
 //=> {TERM_PROGRAM: 'Apple_Terminal', SHELL: '/bin/zsh', ...}
+
+console.log(shellEnv.sync('/bin/bash'));
+//=> {TERM_PROGRAM: 'iTerm.app', SHELL: '/bin/zsh', ...}
 ```
 
 
 ## API
 
-### shellEnv()
+### shellEnv([shell])
 
 Return a promise for the environment variables.
 
-### shellEnv.sync()
+
+### shellEnv.sync([shell])
 
 Returns the environment variables.
+
+#### shell
+
+Type: `string`
+
+Optionally pass in a shell to read the environment variables from.
+If no shell is passed [default-shell](https://github.com/sindresorhus/default-shell) will be used.
 
 
 ## Related

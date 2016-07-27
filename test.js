@@ -12,3 +12,17 @@ test('sync', t => {
 	t.true('HOME' in env);
 	t.false('' in env);
 });
+
+test('async with custom shell', async t => {
+	const shell = '/bin/bash';
+	const env = await m(shell);
+	t.true('HOME' in env);
+	t.false('' in env);
+});
+
+test('sync with custom shell', t => {
+	const shell = '/bin/bash';
+	const env = m.sync(shell);
+	t.true('HOME' in env);
+	t.false('' in env);
+});
