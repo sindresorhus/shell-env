@@ -23,7 +23,13 @@ module.exports = shell => {
 
 	return execa(shell || defaultShell, args)
 		.then(x => parseEnv(x.stdout))
-		.catch(() => process.env);
+		.catch(err => {
+			if (shell) {
+				throw err;
+			} else {
+				return process.env;
+			}
+		});
 };
 
 module.exports.sync = shell => {
@@ -32,9 +38,13 @@ module.exports.sync = shell => {
 	}
 
 	try {
-		const stdout = execa.sync(shell || defaultShell, args);
+		const stdout = execa.sync(shell || defaultShell, args).stdout;
 		return parseEnv(stdout);
 	} catch (err) {
-		return process.env;
+		if (shell) {
+			throw err;
+		} else {
+			return process.env;
+		}
 	}
 };
