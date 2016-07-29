@@ -27,10 +27,10 @@ test('sync with custom shell', t => {
 	t.false('' in env);
 });
 
-test('sync with custom shell throws on non-executable', async t => {
+test('sync with custom shell throws on non-executable', t => {
 	t.throws(() => m.sync('non-executable'));
 });
 
 test('async with custom shell throws on non-executable', async t => {
-	await t.throws(m('non-executable'));
+	t.throws(m('non-executable'));
 });
