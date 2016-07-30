@@ -1,5 +1,4 @@
 'use strict';
-const childProcess = require('child_process');
 const execa = require('execa');
 const stripAnsi = require('strip-ansi');
 const defaultShell = require('default-shell');
@@ -17,26 +16,35 @@ function parseEnv(env) {
 	return ret;
 }
 
-module.exports = () => {
+module.exports = shell => {
 	if (process.platform === 'win32') {
 		return Promise.resolve(process.env);
 	}
 
-	return execa(defaultShell, args)
+	return execa(shell || defaultShell, args)
 		.then(x => parseEnv(x.stdout))
-		.catch(() => process.env);
+		.catch(err => {
+			if (shell) {
+				throw err;
+			} else {
+				return process.env;
+			}
+		});
 };
 
-module.exports.sync = () => {
+module.exports.sync = shell => {
 	if (process.platform === 'win32') {
 		return process.env;
 	}
 
 	try {
-		// TODO: use `execa` → https://github.com/sindresorhus/execa/issues/7
-		const stdout = childProcess.execFileSync(defaultShell, args, {encoding: 'utf8'});
-		return parseEnv(stdout.trim());
+		const stdout = execa.sync(shell || defaultShell, args).stdout;
+		return parseEnv(stdout);
 	} catch (err) {
-		return process.env;
+		if (shell) {
+			throw err;
+		} else {
+			return process.env;
+		}
 	}
 };
