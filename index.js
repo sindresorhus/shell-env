@@ -3,7 +3,7 @@ const execa = require('execa');
 const stripAnsi = require('strip-ansi');
 const defaultShell = require('default-shell');
 
-const args = ['-ilc', 'env; exit'];
+const args = ['-tilc', 'env; exit'];
 
 function parseEnv(env) {
 	const ret = {};
