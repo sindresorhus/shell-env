@@ -8,7 +8,7 @@ Especially useful for Electron/NW.js apps as GUI apps on macOS doesn't inherit t
 ## Install
 
 ```
-$ npm install --save shell-env
+$ npm install shell-env
 ```
 
 
@@ -50,6 +50,12 @@ Shell to read the environment variables from.
 - [shell-history](https://github.com/sindresorhus/shell-history) - Get the command history of the user's shell
 
 
+## Maintainers
+
+- [Sindre Sorhus](https://sindresorhus.com)
+- [@silverwind](https://github.com/silverwind)
+
+
 ## License
 
-MIT © [Sindre Sorhus](https://sindresorhus.com)
+MIT

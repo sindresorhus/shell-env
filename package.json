@@ -1,50 +1,44 @@
 {
-  "name": "shell-env",
-  "version": "0.3.0",
-  "description": "Get environment variables from the shell",
-  "license": "MIT",
-  "repository": "sindresorhus/shell-env",
-  "author": {
-    "name": "Sindre Sorhus",
-    "email": "sindresorhus@gmail.com",
-    "url": "sindresorhus.com"
-  },
-  "maintainers": [
-    "silverwind <me@silverwind.io> (github.com/silverwind)"
-  ],
-  "engines": {
-    "node": ">=4"
-  },
-  "scripts": {
-    "test": "xo && ava"
-  },
-  "files": [
-    "index.js"
-  ],
-  "keywords": [
-    "env",
-    "var",
-    "environment",
-    "variable",
-    "shell",
-    "sh",
-    "zsh",
-    "bash",
-    "macos",
-    "osx",
-    "electron",
-    "nwjs"
-  ],
-  "dependencies": {
-    "default-shell": "^1.0.0",
-    "execa": "^0.5.0",
-    "strip-ansi": "^3.0.0"
-  },
-  "devDependencies": {
-    "ava": "*",
-    "xo": "*"
-  },
-  "xo": {
-    "esnext": true
-  }
+	"name": "shell-env",
+	"version": "0.3.0",
+	"description": "Get environment variables from the shell",
+	"license": "MIT",
+	"repository": "sindresorhus/shell-env",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=4"
+	},
+	"scripts": {
+		"test": "xo && ava"
+	},
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"env",
+		"var",
+		"environment",
+		"variable",
+		"shell",
+		"sh",
+		"zsh",
+		"bash",
+		"macos",
+		"osx",
+		"electron",
+		"nwjs"
+	],
+	"dependencies": {
+		"default-shell": "^1.0.0",
+		"execa": "^0.8.0",
+		"strip-ansi": "^4.0.0"
+	},
+	"devDependencies": {
+		"ava": "*",
+		"xo": "*"
+	}
 }

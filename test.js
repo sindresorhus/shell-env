@@ -1,5 +1,5 @@
 import test from 'ava';
-import m from './';
+import m from '.';
 
 test('async', async t => {
 	const env = await m();
@@ -32,5 +32,5 @@ test('sync with custom shell throws on non-executable', t => {
 });
 
 test('async with custom shell throws on non-executable', async t => {
-	t.throws(m('non-executable'));
+	await t.throws(m('non-executable'));
 });
