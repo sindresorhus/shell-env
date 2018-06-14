@@ -34,7 +34,7 @@
 	],
 	"dependencies": {
 		"default-shell": "^1.0.0",
-		"execa": "^0.8.0",
+		"execa": "^0.10.0",
 		"strip-ansi": "^4.0.0"
 	},
 	"devDependencies": {
