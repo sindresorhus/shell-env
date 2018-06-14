@@ -33,7 +33,7 @@
 		"nwjs"
 	],
 	"dependencies": {
-		"default-shell": "^1.0.0",
+		"default-shell": "^1.0.1",
 		"execa": "^0.10.0",
 		"strip-ansi": "^4.0.0"
 	},
