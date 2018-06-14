@@ -38,7 +38,7 @@ module.exports.sync = shell => {
 	}
 
 	try {
-		const stdout = execa.sync(shell || defaultShell, args).stdout;
+		const {stdout} = execa.sync(shell || defaultShell, args);
 		return parseEnv(stdout);
 	} catch (err) {
 		if (shell) {
