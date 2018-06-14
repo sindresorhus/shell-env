@@ -8,10 +8,10 @@ const args = ['-ilc', 'env; exit'];
 function parseEnv(env) {
 	const ret = {};
 
-	stripAnsi(env).split('\n').forEach(x => {
-		const parts = x.split('=');
+	for (const line of stripAnsi(env).split('\n')) {
+		const parts = line.split('=');
 		ret[parts.shift()] = parts.join('=');
-	});
+	}
 
 	return ret;
 }
@@ -22,7 +22,7 @@ module.exports = shell => {
 	}
 
 	return execa(shell || defaultShell, args)
-		.then(x => parseEnv(x.stdout))
+		.then(result => parseEnv(result.stdout))
 		.catch(err => {
 			if (shell) {
 				throw err;
