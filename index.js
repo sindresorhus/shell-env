@@ -8,7 +8,10 @@ const args = ['-ilc', 'env; exit'];
 function parseEnv(env) {
 	const ret = {};
 
-	for (const line of stripAnsi(env).split('\n')) {
+	const lines = stripAnsi(env).split('\n');
+	lines[0] = lines[0].split(process.env.PWD + '\u0007').pop();
+
+	for (const line of lines) {
 		const parts = line.split('=');
 		ret[parts.shift()] = parts.join('=');
 	}
