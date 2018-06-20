@@ -9,12 +9,11 @@ function parseEnv(env) {
 	env = env.split('_SHELL_ENV_DELIMITER_')[1];
 	const ret = {};
 
-	for (const line of stripAnsi(env).split('\n')) {
-		if (line !== '') {
-			const parts = line.split('=');
-			ret[parts.shift()] = parts.join('=');
-		}
+	for (const line of stripAnsi(env).split('\n').filter(line => Boolean(line))) {
+		const parts = line.split('=');
+		ret[parts.shift()] = parts.join('=');
 	}
+
 	return ret;
 }
 
