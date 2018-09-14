@@ -24,9 +24,9 @@ module.exports = shell => {
 
 	return execa(shell || defaultShell, args)
 		.then(result => parseEnv(result.stdout))
-		.catch(err => {
+		.catch(error => {
 			if (shell) {
-				throw err;
+				throw error;
 			} else {
 				return process.env;
 			}
@@ -41,9 +41,9 @@ module.exports.sync = shell => {
 	try {
 		const {stdout} = execa.sync(shell || defaultShell, args);
 		return parseEnv(stdout);
-	} catch (err) {
+	} catch (error) {
 		if (shell) {
-			throw err;
+			throw error;
 		} else {
 			return process.env;
 		}
