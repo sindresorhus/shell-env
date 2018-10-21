@@ -3,6 +3,7 @@
 	"version": "2.1.0",
 	"description": "Get environment variables from the shell",
 	"license": "MIT",
+	"types": "index.d.ts",
 	"repository": "sindresorhus/shell-env",
 	"author": {
 		"name": "Sindre Sorhus",
@@ -16,7 +17,8 @@
 		"test": "xo && ava"
 	},
 	"files": [
-		"index.js"
+		"index.js",
+		"index.d.ts"
 	],
 	"keywords": [
 		"env",
