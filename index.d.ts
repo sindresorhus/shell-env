@@ -15,7 +15,7 @@ export function sync(shell?: string): ShellEnv;
 /**
  * Get the environment variables defined in your dotfiles.
  * 
- * @param shell To read the environment variables from.
+ * @param shell - The shell to read the environment variables from.
  * @returns The environment variables.
  */
 export function shellEnv(shell?: string): Promise<ShellEnv>;
