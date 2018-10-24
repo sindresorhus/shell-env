@@ -1,4 +1,4 @@
-export interface ShellEnv {
+export interface EnvironmentVariables {
     readonly [x: string]: string;
     readonly SHELL: string;
     readonly TERM_PROGRAM: string;
