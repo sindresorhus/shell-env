@@ -1,5 +1,5 @@
 import {expectType} from 'tsd-check';
-import shellEnv, { sync, ShellEnv } from '.';
+import shellEnv, {sync, ShellEnv} from '.';
 
 (async () => {
     expectType<ShellEnv>(sync());
