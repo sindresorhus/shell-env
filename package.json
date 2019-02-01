@@ -29,18 +29,17 @@
 		"zsh",
 		"bash",
 		"macos",
-		"osx",
 		"electron",
 		"nwjs"
 	],
 	"dependencies": {
 		"default-shell": "^1.0.1",
 		"execa": "^1.0.0",
-		"strip-ansi": "^4.0.0"
+		"strip-ansi": "^5.0.0"
 	},
 	"devDependencies": {
-		"ava": "*",
+		"ava": "^1.2.0",
 		"tsd-check": "^0.3.0",
-		"xo": "*"
+		"xo": "^0.24.0"
 	}
 }

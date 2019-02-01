@@ -1,36 +1,38 @@
 import test from 'ava';
-import m from '.';
+import shellEnv from '.';
 
 test('async', async t => {
-	const env = await m();
+	const env = await shellEnv();
 	t.true('HOME' in env);
 	t.false('' in env);
 });
 
 test('sync', t => {
-	const env = m.sync();
+	const env = shellEnv.sync();
 	t.true('HOME' in env);
 	t.false('' in env);
 });
 
 test('async with custom shell', async t => {
 	const shell = '/bin/bash';
-	const env = await m(shell);
+	const env = await shellEnv(shell);
 	t.true('HOME' in env);
 	t.false('' in env);
 });
 
 test('sync with custom shell', t => {
 	const shell = '/bin/bash';
-	const env = m.sync(shell);
+	const env = shellEnv.sync(shell);
 	t.true('HOME' in env);
 	t.false('' in env);
 });
 
 test('sync with custom shell throws on non-executable', t => {
-	t.throws(() => m.sync('non-executable'));
+	t.throws(() => {
+		shellEnv.sync('non-executable');
+	});
 });
 
 test('async with custom shell throws on non-executable', async t => {
-	await t.throws(m('non-executable'));
+	await t.throwsAsync(shellEnv('non-executable'));
 });

@@ -3,7 +3,10 @@ const execa = require('execa');
 const stripAnsi = require('strip-ansi');
 const defaultShell = require('default-shell');
 
-const args = ['-ilc', 'echo -n "_SHELL_ENV_DELIMITER_"; env; echo -n "_SHELL_ENV_DELIMITER_"; exit'];
+const args = [
+	'-ilc',
+	'echo -n "_SHELL_ENV_DELIMITER_"; env; echo -n "_SHELL_ENV_DELIMITER_"; exit'
+];
 
 function parseEnv(env) {
 	env = env.split('_SHELL_ENV_DELIMITER_')[1];
