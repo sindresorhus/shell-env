@@ -1,5 +1,6 @@
-import {expectType} from 'tsd-check';
-import shellEnv, {sync, EnvironmentVariables} from '.';
+import {expectType} from 'tsd';
+import shellEnv = require('.');
+import {EnvironmentVariables} from '.';
 
-expectType<EnvironmentVariables>(sync());
-expectType<EnvironmentVariables>(await shellEnv());
+expectType<EnvironmentVariables>(shellEnv.sync());
+expectType<Promise<EnvironmentVariables>>(shellEnv());
