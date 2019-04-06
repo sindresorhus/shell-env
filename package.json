@@ -13,7 +13,7 @@
 		"node": ">=6"
 	},
 	"scripts": {
-		"test": "xo && ava && tsd-check"
+		"test": "xo && ava && tsd"
 	},
 	"files": [
 		"index.js",
@@ -35,11 +35,11 @@
 	"dependencies": {
 		"default-shell": "^1.0.1",
 		"execa": "^1.0.0",
-		"strip-ansi": "^5.0.0"
+		"strip-ansi": "^5.2.0"
 	},
 	"devDependencies": {
-		"ava": "^1.2.0",
-		"tsd-check": "^0.3.0",
+		"ava": "^1.4.1",
+		"tsd": "^0.7.2",
 		"xo": "^0.24.0"
 	}
 }
