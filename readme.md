@@ -2,7 +2,7 @@
 
 > Get [environment variables](https://en.wikipedia.org/wiki/Environment_variable) from the [shell](https://en.wikipedia.org/wiki/Shell_(computing))
 
-Especially useful for Electron apps as GUI apps on macOS doesn't inherit the environment variables defined in your dotfiles *(.bashrc/.bash_profile/.zshrc/etc)*.
+Especially useful for Electron apps as GUI apps on macOS doesn't inherit the environment variables defined in your dotfiles *(.bash_profile/.zshrc/etc)*.
 
 
 ## Install
@@ -26,6 +26,8 @@ console.log(shellEnv.sync('/bin/bash'));
 
 
 ## API
+
+Note that for Bash, it reads [`.bash_profile`, but not `.bashrc`](https://apple.stackexchange.com/questions/51036/what-is-the-difference-between-bash-profile-and-bashrc).
 
 ### shellEnv([shell])
 
