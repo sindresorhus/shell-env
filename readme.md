@@ -13,12 +13,12 @@ $ npm install shell-env
 ## Usage
 
 ```js
-const shellEnv = require('shell-env');
+import {shellEnv} from 'shell-env';
 
-console.log(shellEnv.sync());
+console.log(await shellEnv());
 //=> {TERM_PROGRAM: 'Apple_Terminal', SHELL: '/bin/zsh', ...}
 
-console.log(shellEnv.sync('/bin/bash'));
+console.log(await shellEnv('/bin/bash'));
 //=> {TERM_PROGRAM: 'iTerm.app', SHELL: '/bin/zsh', ...}
 ```
 
@@ -30,7 +30,7 @@ Note that for Bash, it reads [`.bash_profile`, but not `.bashrc`](https://apple.
 
 Return a promise for the environment variables.
 
-### shellEnv.sync(shell?)
+### shellEnvSync(shell?)
 
 Returns the environment variables.
 

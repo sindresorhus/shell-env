@@ -1,6 +1,5 @@
 import {expectType} from 'tsd';
-import shellEnv = require('.');
-import {EnvironmentVariables} from '.';
+import {shellEnv, shellEnvSync, EnvironmentVariables} from './index.js';
 
-expectType<EnvironmentVariables>(shellEnv.sync());
 expectType<Promise<EnvironmentVariables>>(shellEnv());
+expectType<EnvironmentVariables>(shellEnvSync());
