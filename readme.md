@@ -6,8 +6,8 @@ Especially useful for Electron apps as GUI apps on macOS doesn't inherit the env
 
 ## Install
 
-```
-$ npm install shell-env
+```sh
+npm install shell-env
 ```
 
 ## Usage
