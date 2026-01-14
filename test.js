@@ -33,6 +33,6 @@ test('async - with custom shell throws on non-executable', async t => {
 
 test('sync - with custom shell throws on non-executable', t => {
 	t.throws(() => {
-		shellEnv.sync('non-executable');
+		shellEnvSync('non-executable');
 	});
 });

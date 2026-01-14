@@ -24,7 +24,11 @@ console.log(await shellEnv('/bin/bash'));
 
 ## API
 
-Note that for Bash, it reads [`.bash_profile`, but not `.bashrc`](https://apple.stackexchange.com/questions/51036/what-is-the-difference-between-bash-profile-and-bashrc).
+> [!NOTE]
+> For Bash, it reads [`.bash_profile`, but not `.bashrc`](https://apple.stackexchange.com/questions/51036/what-is-the-difference-between-bash-profile-and-bashrc).
+
+> [!NOTE]
+> If your default shell is a non-POSIX shell (e.g., Nushell), it will fall back to `/bin/zsh` or `/bin/bash`.
 
 ### shellEnv(shell?)
 
