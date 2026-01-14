@@ -1,6 +1,6 @@
 {
 	"name": "shell-env",
-	"version": "4.0.1",
+	"version": "4.0.2",
 	"description": "Get environment variables from the shell",
 	"license": "MIT",
 	"repository": "sindresorhus/shell-env",
