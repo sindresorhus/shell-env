@@ -5,12 +5,16 @@ test('async', async t => {
 	const env = await shellEnv();
 	t.true('HOME' in env);
 	t.false('' in env);
+	t.is(env.ZSH_TMUX_AUTOSTARTED, 'true');
+	t.is(env.ZSH_TMUX_AUTOSTART, 'false');
 });
 
 test('sync', t => {
 	const env = shellEnvSync();
 	t.true('HOME' in env);
 	t.false('' in env);
+	t.is(env.ZSH_TMUX_AUTOSTARTED, 'true');
+	t.is(env.ZSH_TMUX_AUTOSTART, 'false');
 });
 
 test('async - with custom shell', async t => {

@@ -30,6 +30,9 @@ console.log(await shellEnv('/bin/bash'));
 > [!NOTE]
 > If your default shell is a non-POSIX shell (e.g., Nushell), it will fall back to `/bin/zsh` or `/bin/bash`.
 
+> [!NOTE]
+> It disables the oh-my-zsh tmux plugin auto-start by setting `ZSH_TMUX_AUTOSTARTED` and `ZSH_TMUX_AUTOSTART=false` so the shell does not launch tmux while capturing environment variables.
+
 ### shellEnv(shell?)
 
 Return a promise for the environment variables.

@@ -11,6 +11,9 @@ const args = [
 const env = {
 	// Disables Oh My Zsh auto-update thing that can block the process.
 	DISABLE_AUTO_UPDATE: 'true',
+	// Prevents the oh-my-zsh tmux plugin from auto-starting.
+	ZSH_TMUX_AUTOSTARTED: 'true',
+	ZSH_TMUX_AUTOSTART: 'false',
 };
 
 const parseEnv = env => {
