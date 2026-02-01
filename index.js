@@ -5,7 +5,8 @@ import defaultShell from 'default-shell';
 
 const args = [
 	'-ilc',
-	'echo -n "_SHELL_ENV_DELIMITER_"; env; echo -n "_SHELL_ENV_DELIMITER_"; exit',
+	// Use the command builtin to avoid shell aliases or functions named `env`.
+	'echo -n "_SHELL_ENV_DELIMITER_"; command env; echo -n "_SHELL_ENV_DELIMITER_"; exit',
 ];
 
 const env = {
